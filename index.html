@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sweetand | pracownia cukiernicza Caroline, Poznań Piątkowo</title>
+<meta name="description" content="Makieta strony Sweetand: pracownia cukiernicza Caroline w Poznaniu. Wypieki i torty na zamówienie z najlepszych składników, rogale świętomarcińskie. Os. Stefana Batorego 16.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Red+Hat+Text:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Sweetand: biel, pomarańcz (nuta pomarańczy w ich rogalach), granat poznańskiego nieba.
+   Układ jak prosta, czytelna strona (opis + przycisk, trzy karty, o nas, kontakt),
+   plus własne: rogal 3D na talerzyku, tablica "jak zarezerwować" i generator rezerwacji. */
+:root{
+  --orange:#e2631d;
+  --orange2:#ffb27a;
+  --navy:#1d2a44;
+  --sky:#e8eef8;
+  --peach:#fde3cf;
+  --white:#ffffff;
+  --gut:clamp(18px,5vw,64px);
+  --hd:'Yeseva One',Georgia,serif;
+  --bd:'Red Hat Text','Helvetica Neue',Arial,sans-serif;
+  --fs:17px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--bd);font-size:var(--fs);line-height:1.6;color:var(--navy);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.big{--fs:20px}
+body.hc{--orange:#000;--orange2:#000;--sky:#fff;--peach:#fff;--navy:#000}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--hd);font-weight:400;line-height:1.05}
+
+.a11y{position:fixed;right:14px;bottom:14px;z-index:50;display:flex;gap:6px}
+.a11y button{font:800 14px var(--bd);min-width:46px;min-height:46px;border-radius:50%;border:2px solid var(--navy);background:var(--white);color:var(--navy);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.14)}
+.a11y button[aria-pressed=true]{background:var(--navy);color:var(--white)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:var(--white)}
+.sun{position:absolute;right:-14vw;top:-18vw;width:62vw;height:62vw;border-radius:50%;background:radial-gradient(circle,var(--peach) 0 55%,transparent 56%);z-index:-1;animation:bob 9s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translate(-2vw,3vw)}}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut)}
+.logo{text-decoration:none;font:400 28px var(--hd);color:var(--orange)}
+.logo small{display:block;font:800 10px var(--bd);letter-spacing:.28em;text-transform:uppercase;color:var(--navy);margin-top:-2px}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,2.6vw,30px);font-weight:800;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--orange)}
+@media(max-width:760px){.nav ul{display:none}}
+.call{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--navy);color:var(--white);font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:20px;padding:10px var(--gut) 56px}
+.kick{font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+h1{font-size:clamp(58px,9vw,132px);margin-top:10px}
+.lede{font-size:clamp(18px,1.6vw,21px);max-width:34ch;margin-top:14px}
+.now{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 16px;border-radius:14px;background:var(--sky);font-weight:800;font-size:15px}
+.now b{width:10px;height:10px;border-radius:50%;background:var(--orange);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(226,99,29,.55)}80%,100%{box-shadow:0 0 0 12px rgba(226,99,29,0)}}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:54px;padding:0 24px;border-radius:999px;border:2px solid var(--navy);font-weight:800;text-decoration:none;background:var(--white)}
+.btn.f{background:var(--orange);border-color:var(--orange);color:var(--white)}
+.btn:hover{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.model{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center}
+.plate{position:absolute;left:12%;right:12%;bottom:18%;height:20%;border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#fff 0 45%,#dfe6f2 46% 60%,#fff 61% 70%,#c9d3e5 71%);box-shadow:0 22px 30px rgba(29,42,68,.18)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model figcaption{position:absolute;left:0;right:0;bottom:2%;text-align:center;font-size:12px;opacity:.7}
+@media(max-width:640px){
+  .stage{grid-template-columns:1fr;gap:0;padding-bottom:30px}
+  .model{max-width:68vw;order:-1;margin:-10px auto -10px}
+}
+
+.sec{padding:clamp(64px,10vh,120px) var(--gut)}
+.wrap{max-width:1160px;margin:0 auto}
+.center{text-align:center}
+.sec h2{font-size:clamp(40px,5.6vw,74px)}
+.sec .intro{max-width:56ch;margin:16px auto 0;font-size:18px}
+
+/* OFERTA */
+.cards{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:48px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+.cards li{text-align:center}
+.ph{position:relative;display:block;width:min(240px,70%);margin:0 auto}
+.ph img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 8px var(--white),0 0 0 10px var(--orange2)}
+.ph em{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);white-space:nowrap;padding:6px 12px;border-radius:999px;background:rgba(29,42,68,.86);color:#fff;font:800 12px var(--bd);font-style:normal}
+.cards h3{font-size:28px;margin-top:22px}
+.cards p{margin-top:8px;max-width:30ch;margin-left:auto;margin-right:auto}
+.note{display:block;margin-top:28px;text-align:center;font-size:13px;opacity:.7}
+
+/* ROGALE */
+.rog{background:var(--navy);color:var(--white)}
+.rog .kick{color:var(--orange2)}
+.rog .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,80px);align-items:start}
+@media(max-width:860px){.rog .wrap{grid-template-columns:1fr}}
+.inside{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.inside span{padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.1);font-weight:800;font-size:15px}
+.inside span.o{background:var(--orange);color:#fff}
+.board{background:var(--white);color:var(--navy);border-radius:20px;padding:clamp(22px,3vw,32px)}
+.board h3{font-size:30px}
+.board ol{list-style:none;counter-reset:s;margin-top:16px}
+.board li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed #c9d3e5}
+.board li::before{counter-increment:s;content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.two div{padding:14px;border-radius:14px;background:var(--sky)}
+.two b{display:block;font-size:15px}
+
+/* REZERWACJA */
+.res{background:var(--peach)}
+.res .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:start}
+@media(max-width:860px){.res .wrap{grid-template-columns:1fr}}
+form{display:grid;gap:14px;margin-top:22px}
+label{display:grid;gap:6px;font-weight:800;font-size:14px}
+input{font:inherit;min-height:52px;padding:0 14px;border-radius:14px;border:2px solid var(--navy);background:var(--white);color:var(--navy)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:52px;height:52px;border-radius:50%;border:2px solid var(--navy);background:var(--white);font:800 22px var(--bd);cursor:pointer}
+.qty output{min-width:48px;text-align:center;font:400 34px var(--hd)}
+.preview{background:var(--white);border-radius:20px;padding:24px;box-shadow:0 20px 40px rgba(29,42,68,.12)}
+.preview pre{white-space:pre-wrap;font:600 16px/1.6 var(--bd);margin-top:12px;padding:16px;border-radius:12px;background:var(--sky)}
+.preview .ctas{margin-top:16px}
+.preview small{display:block;margin-top:10px;font-size:13px;opacity:.75}
+
+/* KONTAKT */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(30px,6vw,80px)}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin-top:26px}
+dt{font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:4px;color:var(--orange)}
+dd{font-size:18px}
+.score{margin-top:26px;font:400 clamp(56px,7vw,96px)/1 var(--hd);color:var(--orange)}
+.mapbox{border-radius:20px;overflow:hidden;min-height:400px;border:2px solid var(--navy)}
+.mapbox iframe{display:block;width:100%;height:100%;min-height:400px;border:0}
+footer{background:var(--navy);color:rgba(255,255,255,.78);padding:28px var(--gut) 80px}
+footer p{max-width:88ch;font-size:13px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.sun,.now b{animation:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="a11y" aria-label="Ułatwienia dostępu">
+  <button type="button" id="aBig" aria-pressed="false" title="Większy tekst">A+</button>
+  <button type="button" id="aHc" aria-pressed="false" title="Wysoki kontrast">◐</button>
+</div>
+
+<header class="hero" id="start">
+  <div class="sun" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Menu">
+    <a class="logo" href="#start">Sweetand<small>Pracownia cukiernicza Caroline</small></a>
+    <ul><li><a href="#oferta">Oferta</a></li><li><a href="#rogale">Rogale</a></li><li><a href="#rezerwacja">Rezerwacja</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+    <a class="call" href="tel:+48690510360">690 510 360</a>
+  </nav>
+  <div class="stage">
+    <div>
+      <div class="kick">Poznań · Piątkowo</div>
+      <h1>Sweetand</h1>
+      <p class="lede">Wypieki i torty na zamówienie tworzone z najlepszych składników.</p>
+      <div class="now"><b aria-hidden="true"></b>Ostatnie w tym roku rogale: piątek i sobota</div>
+      <div class="ctas"><a class="btn f" href="#rezerwacja">Zarezerwuj rogale</a><a class="btn" href="#oferta">Zobacz ofertę</a></div>
+    </div>
+    <figure class="model">
+      <div class="plate" aria-hidden="true"></div>
+      <canvas id="cv" role="img" aria-label="Trójwymiarowy rogal świętomarciński z lukrem i orzechami, model wygenerowany komputerowo."></canvas>
+      <figcaption>Rogal: model 3D wygenerowany komputerowo.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="oferta">
+  <div class="wrap">
+    <div class="center rv"><div class="kick">Oferta</div><h2>Co piecze Caroline</h2><p class="intro">Pracownia cukiernicza z Piątkowa. Wypieki i torty na zamówienie, a w listopadzie rogale świętomarcińskie.</p></div>
+    <ul class="cards">
+      <li class="rv"><span class="ph"><img src="rogale.jpg" alt="Rogal świętomarciński (ilustracja)" width="480" height="480" loading="lazy"><em>Tu będzie zdjęcie Pani rogali</em></span><h3>Rogale</h3><p>Świętomarcińskie, z dużą ilością masła i białego maku.</p></li>
+      <li class="rv"><span class="ph"><img src="torty.jpg" alt="Tort z różami (ilustracja)" width="480" height="480" loading="lazy"><em>Tu będzie zdjęcie Pani tortu</em></span><h3>Torty na zamówienie</h3><p>Na urodziny i każdą okazję, z najlepszych składników.</p></li>
+      <li class="rv"><span class="ph"><img src="wypieki.jpg" alt="Kawałek sernika (ilustracja)" width="480" height="480" loading="lazy"><em>Tu będzie zdjęcie Pani wypieku</em></span><h3>Wypieki</h3><p>Ciasta i słodkości na zamówienie.</p></li>
+    </ul>
+    <span class="note">Na razie wizualizacje 3D. W tych miejscach pojawią się zdjęcia wypieków Sweetand.</span>
+  </div>
+</section>
+
+<section class="sec rog" id="rogale">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Rogale świętomarcińskie</div>
+      <h2>Pełne masełka i orzechów</h2>
+      <p class="intro" style="margin-left:0">W środku to, co w prawdziwym poznańskim rogalu najlepsze, z wyraźną nutą pomarańczy.</p>
+      <div class="inside"><span>masło</span><span>orzechy</span><span>migdały</span><span>mielony biały mak</span><span>miód</span><span class="o">nuta pomarańczy</span></div>
+    </div>
+    <div class="board rv">
+      <h3>Jak zarezerwować</h3>
+      <ol>
+        <li>Napisz wiadomość z imieniem, nazwiskiem, numerem telefonu i liczbą sztuk.</li>
+        <li>Odbierz rogale w podanych godzinach na Os. Batorego 16.</li>
+        <li>Bez rezerwacji? Jest też wolna sprzedaż, póki starczy.</li>
+      </ol>
+      <div class="two"><div><b>Odbiór rezerwacji</b>w godzinach z ogłoszenia</div><div><b>Wolna sprzedaż</b>w tych samych godzinach</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec res" id="rezerwacja">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Rezerwacja</div>
+      <h2>Zarezerwuj w minutę</h2>
+      <p class="intro" style="margin-left:0">Wpisz dane, a obok ułożymy gotową wiadomość. Wyślesz ją mailem albo skopiujesz do Messengera.</p>
+      <form id="f" onsubmit="return false">
+        <label>Imię i nazwisko<input name="n" autocomplete="name" placeholder="np. Anna Kowalska"></label>
+        <label>Telefon<input name="t" type="tel" autocomplete="tel" placeholder="np. 600 000 000"></label>
+        <div><label for="q">Liczba rogali</label><div class="qty"><button type="button" id="minus" aria-label="Mniej">−</button><output id="q" aria-live="polite">2</output><button type="button" id="plus" aria-label="Więcej">+</button></div></div>
+      </form>
+    </div>
+    <div class="preview rv">
+      <h3>Twoja wiadomość</h3>
+      <pre id="msg"></pre>
+      <div class="ctas"><a class="btn f" id="mail" href="#">Wyślij mailem</a><button class="btn" type="button" id="copy">Skopiuj do Messengera</button></div>
+      <small id="hint">Po skopiowaniu otwórz <a href="https://www.facebook.com/sweetandcaroline" rel="noopener">stronę Sweetand na Facebooku</a> i wklej wiadomość.</small>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="kontakt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Kontakt</div>
+      <h2>Os. Batorego 16</h2>
+      <dl>
+        <dt>Adres</dt><dd>Os. Stefana Batorego 16, 60-687 Poznań</dd>
+        <dt>Telefon</dt><dd><a href="tel:+48690510360">690 510 360</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:sweetandcaroline@gmail.com">sweetandcaroline@gmail.com</a></dd>
+        <dt>Social</dt><dd><a href="https://www.facebook.com/sweetandcaroline" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/sweetandcaroline/" rel="noopener">Instagram</a></dd>
+      </dl>
+      <div class="score">100%</div><p>gości poleca Sweetand, 78 opinii na Facebooku.</p>
+    </div>
+    <div class="mapbox rv"><iframe title="Mapa: Sweetand, Os. Stefana Batorego 16, Poznań" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=16.9150%2C52.4530%2C16.9310%2C52.4605&amp;layer=mapnik&amp;marker=52.4568740%2C16.9229129"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć wypieków Sweetand: rogal na ekranie i zdjęcia w kartach to wizualizacje 3D wygenerowane komputerowo. W pełnej wersji pojawią się prawdziwe zdjęcia, cennik i aktualne godziny odbiorów, za zgodą właścicielki. Opis, skład rogali, zasady rezerwacji i kontakt pochodzą z facebookowej strony Sweetand.</p>
+</footer>
+
+<script>
+(function(){
+function tog(id,cls){var b=document.getElementById(id);b.addEventListener('click',function(){var on=document.body.classList.toggle(cls);b.setAttribute('aria-pressed',on)})}
+tog('aBig','big');tog('aHc','hc');
+var f=document.getElementById('f'),q=2,out=document.getElementById('q'),msg=document.getElementById('msg'),mail=document.getElementById('mail');
+function build(){var n=f.n.value.trim()||'[imię i nazwisko]',t=f.t.value.trim()||'[telefon]';
+ var txt='Dzień dobry!\nChciał(a)bym zarezerwować rogale świętomarcińskie.\nImię i nazwisko: '+n+'\nTelefon: '+t+'\nLiczba sztuk: '+q;
+ msg.textContent=txt;out.textContent=q;
+ mail.href='mailto:sweetandcaroline@gmail.com?subject='+encodeURIComponent('Rezerwacja rogali')+'&body='+encodeURIComponent(txt)}
+document.getElementById('minus').onclick=function(){if(q>1){q--;build()}};
+document.getElementById('plus').onclick=function(){if(q<50){q++;build()}};
+f.addEventListener('input',build);build();
+document.getElementById('copy').onclick=function(){var b=this;try{navigator.clipboard.writeText(msg.textContent).then(function(){b.textContent='Skopiowano';setTimeout(function(){b.textContent='Skopiuj do Messengera'},2000)})}catch(e){}};
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',function(){
+var cv=document.getElementById('cv');if(!window.THREE||!THREE.GLTFLoader){cv.remove();return}
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.remove();return}
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+var S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,50);cam.position.set(0,1.8,6.2);cam.lookAt(0,-.15,0);
+S.add(new THREE.HemisphereLight(0xffffff,0x6a5a4a,.9));
+var k=new THREE.DirectionalLight(0xfff0e0,1.6);k.position.set(-3,5,4);S.add(k);
+var r=new THREE.DirectionalLight(0xffc9a0,1);r.position.set(4,2,-3);S.add(r);
+var piv=new THREE.Group();S.add(piv);
+new THREE.GLTFLoader().load('rogal.glb',function(g){var o=g.scene,b=new THREE.Box3().setFromObject(o),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),sc=2.4/Math.max(s.x,s.y,s.z);o.scale.setScalar(sc);o.position.set(-c.x*sc,-c.y*sc,-c.z*sc);piv.add(o)});
+function fit(){var w=cv.clientWidth,h=cv.clientHeight;if(!w)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+fit();addEventListener('resize',fit);
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+(function loop(now){requestAnimationFrame(loop);if(!vis)return;var t=(now-t0)/1000;
+ piv.rotation.y=still?.6:t*.4;piv.position.y=still?0:Math.sin(t*1.2)*.07;R.render(S,cam)})(t0);
+});
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"sweetand"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
